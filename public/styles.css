@@ -97,3 +97,9 @@ img.food-photo{filter:var(--food-grade)}
 .steam-wisp{transform-origin:50% 81%}
 .steam-four{stroke-width:7;animation-delay:-1.8s;animation-duration:11.2s}
 .steam-five{stroke-width:8;animation-delay:-7.8s;animation-duration:9.8s}
+
+/* Corporate planning content is visible, concise and easy to compare. */
+.b2b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:35px 0}
+.b2b-grid article{border-top:1px solid var(--line);padding-top:25px}.b2b-grid h3{font-size:25px}.b2b-grid p{font-size:13px;color:var(--muted)}
+.b2b-summary{border-block:1px solid var(--line)}.b2b-summary .big-copy{max-width:850px}
+@media(max-width:850px){.b2b-grid{grid-template-columns:1fr;gap:18px}.b2b-grid article{padding-top:20px}.b2b-summary h2{font-size:clamp(34px,7vw,58px)}}
