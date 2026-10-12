@@ -115,3 +115,12 @@ img.food-photo{filter:var(--food-grade)}
 .review-source-note{font-size:10px;color:var(--muted);margin-bottom:27px}
 @media(max-width:850px){.review-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.review-featured blockquote p{font-size:17px}}
 @media(max-width:560px){.review-grid{grid-template-columns:1fr}.review-featured{grid-column:auto}.review-card{padding:25px}.review-featured blockquote p{font-size:16px}}
+
+/* KÄSE acrostic: big golden letters with restrained molten edges. */
+.kaese-manifest{background:radial-gradient(ellipse at 82% 35%,#efc34f18,transparent 60%),#171717;border-block:1px solid var(--line)}
+.kaese-manifest .section{padding-block:90px}.kaese-manifest h2{font-size:clamp(54px,8.8vw,124px);line-height:1.08;letter-spacing:.01em;display:flex;flex-direction:column;gap:20px;margin:35px 0 45px;text-transform:uppercase}
+.kaese-line{position:relative;width:fit-content;max-width:100%;color:var(--gold);background:linear-gradient(180deg,#ffeaa0 0%,#efc34f 55%,#b98a1e 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.kaese-initial{-webkit-text-stroke:1px #fff1b7;text-shadow:0 0 30px #efc34f18}
+.kaese-line:after{content:'';position:absolute;top:calc(100% - 4px);left:4%;width:92%;height:20px;pointer-events:none;background:radial-gradient(ellipse 5px 20px at 11% 0,#cda12e 98%,transparent),radial-gradient(ellipse 4px 13px at 39% 0,#cda12e 98%,transparent),radial-gradient(ellipse 6px 17px at 68% 0,#cda12e 98%,transparent),radial-gradient(ellipse 3px 10px at 88% 0,#cda12e 98%,transparent)}
+.kaese-punchline{font-family:Oswald,sans-serif;font-size:30px;letter-spacing:1px}.kaese-punchline strong{color:var(--gold)}.kaese-manifest p:not(.eyebrow):not(.kaese-punchline){color:var(--muted);max-width:600px}
+@media(max-width:560px){.kaese-manifest .section{padding-block:65px}.kaese-manifest h2{font-size:clamp(39px,10.5vw,58px);gap:17px}.kaese-line:after{height:13px}.kaese-punchline{font-size:25px}}
