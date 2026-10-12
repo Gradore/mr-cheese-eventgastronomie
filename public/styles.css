@@ -11,3 +11,4 @@
 @media(prefers-reduced-motion:reduce){.js-motion .hero-scroll{height:auto}.js-motion .hero{position:relative;top:auto}.cheese-flow{display:none}}
 
 .gradore img{width:52px;height:18px;object-fit:contain}
+footer{padding-bottom:68px}.footer-bottom a{min-height:40px;display:inline-flex;align-items:center}.footer-bottom{font-size:10px}@media(max-width:560px){footer{padding-bottom:75px}.footer-bottom{font-size:9px}}
