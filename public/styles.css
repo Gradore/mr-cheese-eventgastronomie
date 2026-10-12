@@ -74,3 +74,9 @@ img.food-photo{filter:var(--food-grade)}
 .hero-hand-layer{transform:translate3d(calc(-50% + var(--hand-x,0px) + var(--reach-x,0px)),calc(var(--reach-lift,0px) + var(--hand-y,0px)),var(--reach-z,-150px)) rotateX(var(--hand-rx,8deg)) rotateY(var(--hand-ry,-14deg)) rotateZ(var(--reach-turn,0deg)) scale(var(--reach-scale,.68));backface-visibility:hidden;will-change:transform,opacity;transform-origin:55% 60%}
 @media(max-width:850px){.hero-visual.hero-reaching{perspective:1100px}.hero-reaching .hero-hand-layer{transform-origin:55% 60%}}
 @media(min-width:851px){.hero-reaching .hero-hand-layer{height:min(90%,56vw)}}
+
+/* Original feature: enhanced source, controlled size, no extra parallax zoom. */
+.feature{max-width:1360px;margin-inline:auto;grid-template-columns:44% 56%;min-height:0}
+.feature-photo{height:clamp(560px,52vw,740px)}
+.feature-photo img.feature-image{height:100%;width:100%;object-fit:cover;object-position:50% 65%;transform:none!important;filter:contrast(1.035) saturate(1.025)}
+@media(max-width:560px){.feature{grid-template-columns:1fr}.feature-photo{height:min(135vw,560px)}.feature-photo img.feature-image{object-position:50% 60%}}
