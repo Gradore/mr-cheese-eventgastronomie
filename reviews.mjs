@@ -1,0 +1,13 @@
+// Transcribed from customer-provided Google review screenshots; duplicates removed.
+export const reviews=[
+{name:'Robert Kurowski',tag:'Foodtruck für ein Firmenevent',text:'Wir haben Nemo und seine Freundin inklusive Foodtruck für einen Geburtstag und ein Firmenevent gebucht. Die Burger sind auf höchstem Niveau. Alle Absprachen wurden eingehalten. Ich wünsche beiden weiterhin viel Erfolg',featured:true},
+{name:'Robin Vierke',tag:'Catering & Team',text:'Super schönes Catering, hammer Burger und mega freundliches Personal!'},
+{name:'DWU Pyrotechnik',tag:'Burger & Pommes',text:'Wirklich sehr lecker und Saftig die Burger, Pommes Wirklich genau auf den Punkt.. Fairer Preis'},
+{name:'Stefanie Brueske',tag:'Burger',text:'Die Burger sind suuuper lecker. 5 Sterne für einen der besten Burger die ich jemals gegessen habe.'},
+{name:'Hannes Lipka',tag:'Team & Rostock',text:'Super burger, tolles Team. Genau, was die Kulinarik - Landschaft in Rostock gebraucht hat!'},
+{name:'Frank Melz',tag:'Raclette-Burger',text:'Beste Burger überhaupt. Mehr Käse geht nicht'},
+{name:'Christian Feindt',tag:'Geschmack & Service',text:'Super Lecker und sympathisch'},
+{name:null,tag:'Regionale Zutaten',text:'Eure Burger sind jeden Cent wert. Die Zutaten sind super aufeinander abgestimmt, die Patties perfekt und noch dazu legt ihr Wert auf regionale Produkte! Alles auf einem sehr hohen Niveau - ihr seid mein kulinarischer Geheimtipp in Rostock, Chapeau und weiter so'}
+];
+const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+export const reviewsSection=`<section class="section customer-reviews" id="kundenstimmen"><div class="section-head"><div><p class="eyebrow">KUNDENSTIMMEN AUS GOOGLE-REZENSIONEN</p><h2>GUTER GESCHMACK.<br><span class="gold">GUTE ERFAHRUNGEN.</span></h2></div><p>Was Gäste über unsere Burger, unser Catering und die Zusammenarbeit sagen.</p></div><div class="review-grid">${reviews.map(r=>`<figure class="review-card${r.featured?' review-featured':''}"><div class="review-stars" aria-label="5 von 5 Sternen"><span aria-hidden="true">★★★★★</span></div><span class="review-topic">${escape(r.tag)}</span><blockquote><p>„${escape(r.text)}“</p></blockquote><figcaption><strong>${escape(r.name||'Google-Rezension')}</strong><span>Google · 5/5</span></figcaption></figure>`).join('')}</div><p class="review-source-note">Ausgewählte Google-Rezensionen, teilweise gekürzt.</p><a class="button" href="/anfrage/">Firmen-Catering anfragen <span>↗</span></a></section>`;
