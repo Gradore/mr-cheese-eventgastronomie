@@ -17,3 +17,16 @@ footer{padding-bottom:68px}.footer-bottom a{min-height:40px;display:inline-flex;
 .cheese-flow{height:auto;aspect-ratio:5/2;object-fit:contain;object-position:top;max-width:none;filter:drop-shadow(0 7px 8px #0002);transform:translateY(-104%);will-change:transform}
 @media(max-width:850px){.cheese-flow{height:auto;width:160%;max-width:none;left:-30%;aspect-ratio:5/2}}
 @media(prefers-reduced-motion:reduce){.cheese-flow{display:none}}
+
+/* Organic upward reveal: a continuous photographic sheet, not a moving rectangular image. */
+.cheese-flow.cheese-curtain{inset:0;left:0;top:0;width:100%;height:100%;aspect-ratio:auto;transform:none;filter:none;max-width:none;opacity:0;will-change:auto;pointer-events:none}
+.cheese-flow.cheese-curtain.ready{opacity:1}
+.cheese-cue{position:absolute;z-index:6;left:50%;top:min(65%,500px);transform:translateX(-50%);text-align:center;color:#302718;font-size:10px;font-weight:700;letter-spacing:2px;pointer-events:none;text-shadow:0 1px 1px #fff6}
+.cheese-cue span{display:block;font-size:28px;line-height:1.8}
+.motion-paused .cheese-cue{display:none}
+@media(max-width:850px){.js-motion .hero{position:sticky;top:84px}.js-motion .hero-scroll{height:auto}.cheese-flow.cheese-curtain{left:0;width:100%;height:100%}.cheese-cue{top:48svh}}
+@media(max-width:560px){.js-motion .hero{top:78px}}
+.motion-paused .hero{position:relative;top:auto}
+@media(prefers-reduced-motion:reduce){.cheese-flow.cheese-curtain,.cheese-cue{display:none}.js-motion .hero{position:relative;top:auto}}
+.js-motion .cheese-flow.cheese-curtain:not(.ready){opacity:1;background:url('/assets/raclette-cheese-surface.webp') center/cover no-repeat}
+.cheese-cue{display:none}body.js-motion:not(.motion-paused) .cheese-cue{display:block}.cheese-cue[hidden]{display:none!important}

@@ -47,3 +47,7 @@ No external animation asset used; all motion is created in the project. No track
 ## Photographic cheese overlay update
 
 The client-supplied 4000×1600 RGBA WebP is used unchanged as `public/assets/raclette-cheese-overlay.webp`, replacing the solid SVG drips. It retains genuine alpha transparency, realistic raclette highlights and browned spots. The animation calculates its travel from actual hero and image dimensions, so the sheet exits fully. On narrow screens it spans 160% with symmetric cropping to retain long drips. Reduced-motion and pause hide the overlay. No new generated asset and no image manipulation were needed.
+
+## Organic upward curtain revision
+
+The hero now starts covered by a continuous photographic cheese surface. A WebGL shader blends a new opaque Imagegen surface (`raclette-cheese-surface.webp`, 1536×1024) with the original supplied RGBA drip photograph, without exposing the bitmap top edge or repeating/streaking its narrow upper band. The exact generation prompt is in `public/assets/cheese-surface-prompt.txt`. Unequal, progress-dependent vertical waves, local viscous stretching and slight horizontal deformation animate the photographed drips. Scrolling retracts the sheet upward over 780px, smoothly damped, revealing the hero beneath. The original drip image remains unchanged. Desktop and mobile sticky stage height is based on the actual hero height. GPU work settles after scrolling and stops when hidden/paused; reduced-motion bypasses the curtain. Unsupported WebGL falls back to the visible hero.
