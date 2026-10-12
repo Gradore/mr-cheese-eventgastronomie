@@ -30,3 +30,23 @@ footer{padding-bottom:68px}.footer-bottom a{min-height:40px;display:inline-flex;
 @media(prefers-reduced-motion:reduce){.cheese-flow.cheese-curtain,.cheese-cue{display:none}.js-motion .hero{position:relative;top:auto}}
 .js-motion .cheese-flow.cheese-curtain:not(.ready){opacity:1;background:url('/assets/raclette-cheese-surface.webp') center/cover no-repeat}
 .cheese-cue{display:none}body.js-motion:not(.motion-paused) .cheese-cue{display:block}.cheese-cue[hidden]{display:none!important}
+
+/* Charcoal & golden food photography: preserve natural food/skin colors. */
+:root{--food-grade:contrast(1.1) saturate(1.06) brightness(.96) sepia(.06)}
+img.food-photo{filter:var(--food-grade)}
+.card-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(145deg,#efc34f16,#15303c0d);mix-blend-mode:soft-light;pointer-events:none}
+.service-card:hover img.food-photo,.event-card:hover img.food-photo,.gallery-item:hover img.food-photo{filter:contrast(1.12) saturate(1.15) brightness(1.02) sepia(.04)}
+.hero-visual.hero-reaching{overflow:visible;clip-path:none;isolation:isolate;perspective:1100px}
+.hero-scene{position:absolute;inset:0;overflow:hidden;clip-path:polygon(10% 0,100% 0,100% 100%,0 100%);z-index:0}
+.hero-scene .hero-backdrop{height:100%;width:100%;object-fit:cover;object-position:43% 45%;filter:contrast(1.12) saturate(.75) brightness(.69) sepia(.09);transform-origin:50% 42%;will-change:transform}
+.hero-scene .photo-shade{background:linear-gradient(90deg,#202020 0%,#20202070 15%,transparent 60%),linear-gradient(0deg,#171717c0,transparent 60%)}
+.hero-hand-layer{position:absolute;z-index:2;height:100%;aspect-ratio:3/2;width:auto;max-width:none;top:0;left:50%;transform:translateX(calc(-50% + var(--hand-x,0px))) translateY(calc(var(--reach-lift,0px) + var(--hand-y,0px))) scale(var(--reach-scale,1.01));transform-origin:17% 44%;pointer-events:none;transition:transform .18s ease-out;will-change:transform}
+.hero-hand-layer .hero-hand{width:100%;height:100%;object-fit:contain;max-width:none;filter:contrast(1.1) saturate(1.12) brightness(1.045) sepia(.04) drop-shadow(0 15px 18px #0003)}
+.hero-reaching .hero-label{z-index:3;left:24%;bottom:35px;background:#1717177d;padding:13px 16px;backdrop-filter:blur(8px)}
+.hero-reaching .hero-label strong{font-size:24px}.hero-reaching .round-label{z-index:3;top:7%;right:6%}
+.motion-paused .hero-hand-layer{transform:translateX(-50%) scale(1.1)!important;transition:none!important}
+@media(max-width:850px){.hero-reaching .hero-scene{clip-path:none}.hero-reaching .hero-scene .hero-backdrop{object-position:42% 40%;filter:contrast(1.1) saturate(.82) brightness(.78) sepia(.06)}.hero-reaching .hero-hand-layer{height:115%;top:0;transform-origin:17% 48%}.hero-reaching .hero-label{left:6%;bottom:18px}.hero-reaching .round-label{width:85px;height:85px;top:6%;right:5%}.hero-reaching .round-label b{font-size:18px}.hero-reaching .hero-label strong{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.hero-hand-layer{transform:translateX(-50%) scale(1.1)!important;transition:none!important}.hero-scene .hero-backdrop{transform:none!important}}
+.hero-reaching .hero-hand-layer{height:90%;top:3%;left:48%}
+.hero-hand-layer .hero-hand{filter:contrast(1.08) saturate(1.05) brightness(1.02) sepia(.035) drop-shadow(0 15px 18px #0003);mask-image:linear-gradient(to right,transparent 0,transparent 12%,#000 33%,#000 100%)}
+@media(max-width:850px){.hero-reaching .hero-hand-layer{height:100%;top:0;left:50%}}
