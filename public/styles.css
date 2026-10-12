@@ -58,3 +58,13 @@ img.food-photo{filter:var(--food-grade)}
 @media(max-width:850px){.hero-reaching{height:420px}.hero-reaching .hero-hand-layer{width:150%;height:auto;top:4%;left:35%;transform-origin:58% 60%}.hero-reaching .hero-label{right:6%;bottom:18px}.hero-reaching .round-label{top:2%}}
 @media(max-width:560px){.hero-reaching{height:360px}.hero-reaching .hero-hand-layer{top:8%}}
 @media(max-width:850px){.hero-reaching{height:420px}.hero-reaching .hero-hand-layer{top:0;left:45%}.hero-reaching .hero-label{display:none}}
+
+/* Subtle photographic cheese behind the hand, never over the copy. */
+.js-motion .hero-scroll{height:auto!important}
+.js-motion .hero{position:relative;top:auto}
+.hero-reaching .cheese-flow.cheese-curtain{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:.27;transform:none;filter:saturate(.82) brightness(.8);pointer-events:none;mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 85%)}
+.hero-reaching .cheese-flow.cheese-curtain:not(.ready){opacity:.18;background:url('/assets/raclette-cheese-overlay.webp') center top/100% auto no-repeat}
+.hero-reaching .hero-hand-layer{z-index:2}
+.motion-paused .hero-hand-layer{opacity:1!important}
+@media(max-width:850px){.hero-reaching .cheese-flow.cheese-curtain{opacity:.23}}
+@media(prefers-reduced-motion:reduce){.hero-hand-layer{opacity:1!important}}
