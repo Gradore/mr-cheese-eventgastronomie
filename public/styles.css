@@ -68,3 +68,8 @@ img.food-photo{filter:var(--food-grade)}
 .motion-paused .hero-hand-layer{opacity:1!important}
 @media(max-width:850px){.hero-reaching .cheese-flow.cheese-curtain{opacity:.23}}
 @media(prefers-reduced-motion:reduce){.hero-hand-layer{opacity:1!important}}
+
+/* Predecoded, composited depth approach with damped cursor follow. */
+.hero-visual.hero-reaching{perspective:1100px;perspective-origin:55% 60%}
+.hero-hand-layer{transform:translate3d(calc(-50% + var(--hand-x,0px) + var(--reach-x,0px)),calc(var(--reach-lift,0px) + var(--hand-y,0px)),var(--reach-z,-150px)) rotateX(var(--hand-rx,8deg)) rotateY(var(--hand-ry,-14deg)) rotateZ(var(--reach-turn,0deg)) scale(var(--reach-scale,.68));backface-visibility:hidden;will-change:transform,opacity;transform-origin:55% 60%}
+@media(max-width:850px){.hero-visual.hero-reaching{perspective:1100px}.hero-reaching .hero-hand-layer{transform-origin:55% 60%}}
