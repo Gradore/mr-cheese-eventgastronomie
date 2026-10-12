@@ -124,3 +124,8 @@ img.food-photo{filter:var(--food-grade)}
 .kaese-line:after{content:'';position:absolute;top:calc(100% - 4px);left:4%;width:92%;height:20px;pointer-events:none;background:radial-gradient(ellipse 5px 20px at 11% 0,#cda12e 98%,transparent),radial-gradient(ellipse 4px 13px at 39% 0,#cda12e 98%,transparent),radial-gradient(ellipse 6px 17px at 68% 0,#cda12e 98%,transparent),radial-gradient(ellipse 3px 10px at 88% 0,#cda12e 98%,transparent)}
 .kaese-punchline{font-family:Oswald,sans-serif;font-size:30px;letter-spacing:1px}.kaese-punchline strong{color:var(--gold)}.kaese-manifest p:not(.eyebrow):not(.kaese-punchline){color:var(--muted);max-width:600px}
 @media(max-width:560px){.kaese-manifest .section{padding-block:65px}.kaese-manifest h2{font-size:clamp(39px,10.5vw,58px);gap:17px}.kaese-line:after{height:13px}.kaese-punchline{font-size:25px}}
+
+/* Clear acrostic: gold K Ä S E, lighter words, no molten treatment. */
+.kaese-line{display:flex;align-items:baseline;gap:.04em;color:var(--cream);background:none;-webkit-text-fill-color:currentColor;font-family:Oswald,sans-serif;font-weight:400;font-size:.72em;text-transform:none}
+.kaese-initial{font-family:Anton,Impact,sans-serif;font-size:1.4em;color:var(--gold);-webkit-text-stroke:0;text-shadow:none}
+.kaese-line:after{display:none}
