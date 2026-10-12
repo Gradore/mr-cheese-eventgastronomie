@@ -12,3 +12,8 @@
 
 .gradore img{width:52px;height:18px;object-fit:contain}
 footer{padding-bottom:68px}.footer-bottom a{min-height:40px;display:inline-flex;align-items:center}.footer-bottom{font-size:10px}@media(max-width:560px){footer{padding-bottom:75px}.footer-bottom{font-size:9px}}
+
+/* Photographic raclette supplied by the client: preserve the source alpha and texture. */
+.cheese-flow{height:auto;aspect-ratio:5/2;object-fit:contain;object-position:top;max-width:none;filter:drop-shadow(0 7px 8px #0002);transform:translateY(-104%);will-change:transform}
+@media(max-width:850px){.cheese-flow{height:auto;width:160%;max-width:none;left:-30%;aspect-ratio:5/2}}
+@media(prefers-reduced-motion:reduce){.cheese-flow{display:none}}

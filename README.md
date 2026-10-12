@@ -43,3 +43,7 @@ Design research references:
 - https://www.squarespace.com/templates/browse/topic/restaurants/type/launch-page
 
 No external animation asset used; all motion is created in the project. No tracking or third-party font/image requests.
+
+## Photographic cheese overlay update
+
+The client-supplied 4000×1600 RGBA WebP is used unchanged as `public/assets/raclette-cheese-overlay.webp`, replacing the solid SVG drips. It retains genuine alpha transparency, realistic raclette highlights and browned spots. The animation calculates its travel from actual hero and image dimensions, so the sheet exits fully. On narrow screens it spans 160% with symmetric cropping to retain long drips. Reduced-motion and pause hide the overlay. No new generated asset and no image manipulation were needed.
