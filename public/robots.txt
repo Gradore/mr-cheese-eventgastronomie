@@ -7,4 +7,4 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-Sitemap: https://mcr.gradore.de/sitemap.xml
+Sitemap: https://www.raclette-catering.com/sitemap.xml

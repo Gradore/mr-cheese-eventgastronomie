@@ -1,6 +1,7 @@
 // Transcribed from customer-provided Google review screenshots; duplicates removed.
 export const reviews=[
-{name:'Robert Kurowski',tag:'Foodtruck für ein Firmenevent',text:'Wir haben Nemo und seine Freundin inklusive Foodtruck für einen Geburtstag und ein Firmenevent gebucht. Die Burger sind auf höchstem Niveau. Alle Absprachen wurden eingehalten. Ich wünsche beiden weiterhin viel Erfolg',featured:true},
+{name:null,tag:'Gebucht für ein Firmenevent',text:'Gestern im Rahmen unseres Firmenevents wurde Mr. Cheese Raclette gebucht. Super Handmade Burger mit frischem warmen Raclettekäse in einer Top Qualität. Zudem ist der Betreiber sehr angenehm und engagiert. Uneingeschränkt zu empfehlen.',featured:true},
+{name:'Robert Kurowski',tag:'Foodtruck für ein Firmenevent',text:'Wir haben Nemo und seine Freundin inklusive Foodtruck für einen Geburtstag und ein Firmenevent gebucht. Die Burger sind auf höchstem Niveau. Alle Absprachen wurden eingehalten. Ich wünsche beiden weiterhin viel Erfolg',featured:false},
 {name:'Robin Vierke',tag:'Catering & Team',text:'Super schönes Catering, hammer Burger und mega freundliches Personal!'},
 {name:'DWU Pyrotechnik',tag:'Burger & Pommes',text:'Wirklich sehr lecker und Saftig die Burger, Pommes Wirklich genau auf den Punkt.. Fairer Preis'},
 {name:'Stefanie Brueske',tag:'Burger',text:'Die Burger sind suuuper lecker. 5 Sterne für einen der besten Burger die ich jemals gegessen habe.'},

@@ -1,5 +1,5 @@
 import fs from 'node:fs';import path from 'node:path';
-const base='https://mcr.gradore.de';let failures=[];let count=0;
+const base='https://www.raclette-catering.com';let failures=[];let count=0;
 const walk=d=>fs.readdirSync(d,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(d,e.name)):[path.join(d,e.name)]);
 for(const file of walk('dist').filter(f=>f.endsWith('index.html'))){const h=fs.readFileSync(file,'utf8');if(h.includes('http-equiv="refresh"'))continue;count++;const relative=path.relative('dist',path.dirname(file)).replaceAll('\\','/');const expected=base+'/'+(relative?relative+'/':'');if(!h.includes(`rel="canonical" href="${expected}"`))failures.push('Canonical '+file);if(!h.includes('max-image-preview:large'))failures.push('Preview '+file);const json=h.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];try{const data=JSON.parse(json);if(!data['@graph'].some(x=>x['@type']==='WebPage'&&x.url===expected))failures.push('WebPage '+file);if(!data['@graph'].some(x=>x['@id']===base+'/#unternehmen'))failures.push('Provider '+file)}catch{failures.push('JSON '+file)}if(h.includes('https://www.raclette-catering.com'))failures.push('Old origin '+file)}
 const sitemap=fs.readFileSync('dist/sitemap.xml','utf8');if((sitemap.match(/<loc>/g)||[]).length!==count||!sitemap.includes(base+'/firmen-catering/'))failures.push('Sitemap');

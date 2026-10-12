@@ -16,10 +16,10 @@ Anlass, Datum, Ort und ungefähre Gästezahl nennen. Gemeinsam Menü, Getränke,
 
 ## Quellen
 
-- Firmen-Catering: https://mcr.gradore.de/firmen-catering/
-- Leistungen: https://mcr.gradore.de/leistungen/
-- Menü: https://mcr.gradore.de/speisekarte/
-- Eventanfrage: https://mcr.gradore.de/anfrage/
-- Unternehmen: https://mcr.gradore.de/ueber-uns/
-- Impressum: https://mcr.gradore.de/impressum/
-- Datenschutz: https://mcr.gradore.de/datenschutz/
+- Firmen-Catering: https://www.raclette-catering.com/firmen-catering/
+- Leistungen: https://www.raclette-catering.com/leistungen/
+- Menü: https://www.raclette-catering.com/speisekarte/
+- Eventanfrage: https://www.raclette-catering.com/anfrage/
+- Unternehmen: https://www.raclette-catering.com/ueber-uns/
+- Impressum: https://www.raclette-catering.com/impressum/
+- Datenschutz: https://www.raclette-catering.com/datenschutz/
