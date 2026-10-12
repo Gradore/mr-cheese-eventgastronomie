@@ -30,7 +30,7 @@ Customer photos are downloaded locally and converted to WebP. `public/assets/sou
 
 Typeface identification from a raster flyer is approximate: Poppins body, Anton display, Oswald compact headlines, all locally hosted. Their official upstream licenses are retained in assets. Color direction follows the supplied charcoal/gold flyers. Photograph grade uses CSS saturation, contrast and slight warm tint, preserving originals.
 
-Gradore credit: official current logo fetched from https://gradore.de/gradore-logo-optimized.webp, with required referral link.
+Gradore credit: official current logo fetched from https://gradore.de/assets/gradore-wordmark-light-5UBFt_3g.svg, with required referral link.
 
 ## Motion & accessibility
 

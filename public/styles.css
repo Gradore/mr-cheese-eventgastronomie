@@ -9,3 +9,5 @@
 @media(max-width:850px){.js-motion .hero-scroll{height:auto}.js-motion .hero{position:relative;top:auto}.cheese-flow{height:180px}.photo-rail figure{flex-basis:70%}.photo-rail img{height:330px}}
 @media(max-width:560px){.photo-rail figure{flex-basis:85%}.photo-rail img{height:300px}.photo-story .section-head{display:flex;align-items:end;gap:15px}.photo-story .section-head h2{font-size:35px}.photo-story .eyebrow{font-size:7px}.rail-controls{gap:6px}.rail-controls button{width:35px;height:40px;font-size:19px}}
 @media(prefers-reduced-motion:reduce){.js-motion .hero-scroll{height:auto}.js-motion .hero{position:relative;top:auto}.cheese-flow{display:none}}
+
+.gradore img{width:52px;height:18px;object-fit:contain}
