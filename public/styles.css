@@ -50,3 +50,11 @@ img.food-photo{filter:var(--food-grade)}
 .hero-reaching .hero-hand-layer{height:90%;top:3%;left:48%}
 .hero-hand-layer .hero-hand{filter:contrast(1.08) saturate(1.05) brightness(1.02) sepia(.035) drop-shadow(0 15px 18px #0003);mask-image:linear-gradient(to right,transparent 0,transparent 12%,#000 33%,#000 100%)}
 @media(max-width:850px){.hero-reaching .hero-hand-layer{height:100%;top:0;left:50%}}
+
+/* Visible hand-off: trigger only when the burger area is on screen. */
+.hero-reaching .hero-scene{background:radial-gradient(ellipse at 65% 50%,#66502560 0%,#28241d80 35%,#202020 72%);clip-path:none}
+.hero-hand-layer{transform:translateX(calc(-50% + var(--hand-x,0px) + var(--reach-x,0px))) translateY(calc(var(--reach-lift,0px) + var(--hand-y,0px))) rotate(var(--reach-turn,0deg)) scale(var(--reach-scale,.72));transform-origin:55% 60%;transition:none}
+.hero-reaching .hero-label{left:auto;right:8%;bottom:28px}
+@media(max-width:850px){.hero-reaching{height:420px}.hero-reaching .hero-hand-layer{width:150%;height:auto;top:4%;left:35%;transform-origin:58% 60%}.hero-reaching .hero-label{right:6%;bottom:18px}.hero-reaching .round-label{top:2%}}
+@media(max-width:560px){.hero-reaching{height:360px}.hero-reaching .hero-hand-layer{top:8%}}
+@media(max-width:850px){.hero-reaching{height:420px}.hero-reaching .hero-hand-layer{top:0;left:45%}.hero-reaching .hero-label{display:none}}
