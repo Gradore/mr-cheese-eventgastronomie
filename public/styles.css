@@ -92,3 +92,8 @@ img.food-photo{filter:var(--food-grade)}
 @keyframes raclette-steam-rise{0%{opacity:0;transform:translate(0,22px) scale(.94,1)}20%{opacity:.11}55%{opacity:.14;transform:translate(-9px,-35px) scale(1.1,1.04)}100%{opacity:0;transform:translate(12px,-95px) scale(1.28,1.09)}}
 .motion-paused .feature-steam{display:none}
 @media(prefers-reduced-motion:reduce){.feature-steam{display:none!important}}
+
+/* Spread gentle heat over the full patty, with independent staggered wisps. */
+.steam-wisp{transform-origin:50% 81%}
+.steam-four{stroke-width:7;animation-delay:-1.8s;animation-duration:11.2s}
+.steam-five{stroke-width:8;animation-delay:-7.8s;animation-duration:9.8s}
