@@ -80,3 +80,15 @@ img.food-photo{filter:var(--food-grade)}
 .feature-photo{height:clamp(560px,52vw,740px)}
 .feature-photo img.feature-image{height:100%;width:100%;object-fit:cover;object-position:50% 65%;transform:none!important;filter:contrast(1.035) saturate(1.025)}
 @media(max-width:560px){.feature{grid-template-columns:1fr}.feature-photo{height:min(135vw,560px)}.feature-photo img.feature-image{object-position:50% 60%}}
+
+/* Gentle steam follows the photographed wisps above the hot burger. */
+.feature-steam{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;overflow:hidden;display:none}
+.js-motion .feature-steam{display:block}
+.steam-wisp{fill:none;stroke:#fff9ed;stroke-width:11;stroke-linecap:round;opacity:0;transform-origin:25% 76%;animation:raclette-steam-rise 9s linear infinite;animation-play-state:paused;will-change:transform,opacity}
+.steam-two{stroke-width:8;animation-delay:-3.6s;animation-duration:10.5s}
+.steam-three{stroke-width:6;animation-delay:-6.2s;animation-duration:8.3s}
+.steam-visible .steam-wisp{animation-play-state:running}
+.feature-photo .image-caption{z-index:2}
+@keyframes raclette-steam-rise{0%{opacity:0;transform:translate(0,22px) scale(.94,1)}20%{opacity:.11}55%{opacity:.14;transform:translate(-9px,-35px) scale(1.1,1.04)}100%{opacity:0;transform:translate(12px,-95px) scale(1.28,1.09)}}
+.motion-paused .feature-steam{display:none}
+@media(prefers-reduced-motion:reduce){.feature-steam{display:none!important}}
