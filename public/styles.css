@@ -66,7 +66,7 @@ img.food-photo{filter:var(--food-grade)}
 .hero-reaching .cheese-flow.cheese-curtain:not(.ready){opacity:.18;background:url('/assets/raclette-cheese-overlay.webp') center top/100% auto no-repeat}
 .hero-reaching .hero-hand-layer{z-index:2}
 .motion-paused .hero-hand-layer{opacity:1!important}
-@media(max-width:850px){.hero-reaching .cheese-flow.cheese-curtain{opacity:.23}}
+@media(max-width:850px){.hero-reaching .cheese-flow.cheese-curtain{opacity:.42;filter:saturate(1.22) brightness(1.06) contrast(1.1) sepia(.08)}.hero-reaching .cheese-flow.cheese-curtain:not(.ready){opacity:.36}}
 @media(prefers-reduced-motion:reduce){.hero-hand-layer{opacity:1!important}}
 
 /* Predecoded, composited depth approach with damped cursor follow. */

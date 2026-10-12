@@ -64,22 +64,28 @@ if(!paused)body.classList.add('js-motion');
 $$('[data-motion=words],[data-motion=hero]').forEach(el=>{let count=0;function split(node){[...node.childNodes].forEach(n=>{if(n.nodeType===3){const f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(word=>{if(!word.trim()){f.append(document.createTextNode(word));return}const mask=document.createElement('span');mask.className='word-mask';const inner=document.createElement('span');inner.textContent=word;inner.style.setProperty('--word-delay',`${count++*85}ms`);mask.append(inner);f.append(mask)});n.replaceWith(f)}else if(n.nodeType===1&&n.tagName!=='BR')split(n)})}split(el)});
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}}),{threshold:.12});$$('.reveal,[data-motion=words]').forEach(el=>observer.observe(el));
 let scheduled=false;const cheese=$('.cheese-flow'),hero=$('.hero'),heroImage=$('.hero-image'),handLayer=$('.hero-hand-layer');const curtain=hero&&cheese?createCheeseCurtain(cheese,handLayer?handLayer.parentElement:hero,()=>paused):null;
-let reachStarted=null,handRaf=0,handDecoded=false,lastHandTime=0;
+let reachStarted=null,handRaf=0,handDecoded=false,lastHandTime=0,handRetreat=0;
 const pointer={x:0,y:0,tx:0,ty:0};
 const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
 function requestHand(){if(handLayer&&!handRaf&&!paused&&!document.hidden)handRaf=requestAnimationFrame(drawHand)}
 function drawHand(now){handRaf=0;if(paused||document.hidden)return;const visual=handLayer.parentElement.getBoundingClientRect();const visible=visual.top<innerHeight*(innerWidth<=850?.65:.85)&&visual.bottom>100;if(!visible){lastHandTime=0;return}const warm=handDecoded&&(!curtain||cheese.hidden||cheese.classList.contains('ready'));if(warm&&reachStarted===null)reachStarted=now+160;const t=reachStarted===null?0:clamp((now-reachStarted)/2100,0,1);const reach=t*t*t*(t*(t*6-15)+10);const dt=Math.min(40,lastHandTime?now-lastHandTime:16);lastHandTime=now;const blend=1-Math.exp(-dt/85);pointer.x+=(pointer.tx-pointer.x)*blend;pointer.y+=(pointer.ty-pointer.y)*blend;
-handLayer.style.opacity=String(.18+Math.min(1,t*3)*.82);
-handLayer.style.setProperty('--reach-scale',String(.68+reach*.29));
-handLayer.style.setProperty('--reach-z',(-150+reach*250)+'px');
-handLayer.style.setProperty('--reach-lift',(24*(1-reach))+'px');
+// On phones, pull the hand back into the scene as the visual passes the upper viewport.
+const retreatProgress=innerWidth<=850?clamp((innerHeight*.22-visual.top)/(visual.height*.55),0,1):0;
+const retreatTarget=retreatProgress*retreatProgress*(3-2*retreatProgress);
+handRetreat+=(retreatTarget-handRetreat)*(1-Math.exp(-dt/110));
+if(Math.abs(retreatTarget-handRetreat)<.001)handRetreat=retreatTarget;
+handLayer.dataset.retreat=handRetreat.toFixed(3);
+handLayer.style.opacity=String((.18+Math.min(1,t*3)*.82)*(1-handRetreat*.22));
+handLayer.style.setProperty('--reach-scale',String(.68+reach*.29-handRetreat*.22));
+handLayer.style.setProperty('--reach-z',(-150+reach*250-handRetreat*340)+'px');
+handLayer.style.setProperty('--reach-lift',(24*(1-reach)+handRetreat*24)+'px');
 handLayer.style.setProperty('--reach-x',(-18*(1-reach))+'px');
 handLayer.style.setProperty('--reach-turn',(-3*(1-reach))+'deg');
 handLayer.style.setProperty('--hand-x',(pointer.x*48)+'px');
 handLayer.style.setProperty('--hand-y',(pointer.y*30)+'px');
-handLayer.style.setProperty('--hand-rx',(8*(1-reach)-pointer.y*5)+'deg');
-handLayer.style.setProperty('--hand-ry',(-14*(1-reach)+pointer.x*9)+'deg');
-if(!warm||t<1||Math.abs(pointer.tx-pointer.x)+Math.abs(pointer.ty-pointer.y)>.001)requestHand();}
+handLayer.style.setProperty('--hand-rx',(8*(1-reach)+handRetreat*6-pointer.y*5)+'deg');
+handLayer.style.setProperty('--hand-ry',(-14*(1-reach)-handRetreat*7+pointer.x*9)+'deg');
+if(!warm||t<1||Math.abs(retreatTarget-handRetreat)>.001||Math.abs(pointer.tx-pointer.x)+Math.abs(pointer.ty-pointer.y)>.001)requestHand();}
 if(handLayer){const photograph=handLayer.querySelector('img');Promise.resolve(photograph.decode?photograph.decode():null).catch(()=>{}).then(()=>{handDecoded=true;requestHand()});new IntersectionObserver(()=>requestHand()).observe(handLayer.parentElement)}
 function frame(){scheduled=false;if(paused)return;const y=window.scrollY;if(hero){const p=clamp(y/780,0,1);if(curtain)curtain.progress(p);requestHand()}$$('.parallax').forEach(el=>{const r=el.parentElement.getBoundingClientRect();el.style.transform=`translateY(${Math.max(-70,Math.min(30,-r.top*.09-35))}px)`});$$('[data-motion=highlight]').forEach(el=>{const r=el.getBoundingClientRect();const p=clamp((innerHeight*.85-r.top)/(innerHeight*.5),0,1);el.style.color=`rgb(${Math.round(130+p*112)},${Math.round(128+p*110)},${Math.round(122+p*107)})`})}
 addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(frame)}},{passive:true});addEventListener('resize',()=>{if(curtain)curtain.resize();frame()});frame();
